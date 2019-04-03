@@ -1,0 +1,41 @@
+  
+<div class="container">
+<body>
+  <form autocomplete="off">
+    <div class="form-group">
+      <input  type="text" class="form-control" placeholder="search your username" [(ngModel)]='username'  name='username'>
+    </div>
+    <button class="btn btn-info" type="submit"
+    (click)="findUsers()">Search</button>
+  </form>
+<br>
+  <hr>
+<br>
+
+ <div class="row">
+  <div class="row">
+    <div class="col-md-6">
+<img src="{{user.avatar_url}}" alt="image" width="250px" height="250px">
+</div>
+<div class="col-md-6">
+<p>Login Name:{{user.login}}</p>
+<p>public Repos:{{user.public_repos}}</p>
+<p>Followers:{{user.followers}}</p>
+<p>Following:{{user.following}}</p>
+<p>
+  Created at:{{user.created_at}}
+</p>
+</div>
+</div> 
+<div>
+    <p><strong>REPOSITORIES</strong></p>
+  <li type="1" *ngFor='let repo of repositories'>
+<a href="{{repo.html_url}}"> <p>name:{{repo.name}}</p></a>
+
+<p>Description {{repo.description}}</p>
+</li>
+</div>
+</div>
+
+</body>
+</div>
